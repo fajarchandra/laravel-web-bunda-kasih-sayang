@@ -1,0 +1,11 @@
+image intervention install composer
+- composer require intervention/image
+
+Laravel file manager https://unisharp.github.io/laravel-filemanager/installation 
+- composer require unisharp/laravel-filemanager
+
+add aliases
+- 'Image' => Intervention\Image\Facades\Image::class,
+
+CDN CKedito 4
+- <script src="https://cdn.ckeditor.com/4.25.0-lts/standard/ckeditor.js"></script>

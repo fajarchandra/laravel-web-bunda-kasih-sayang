@@ -1,0 +1,1333 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Vazirmatn:wght@100..900&family=WindSong:wght@400;500&display=swap");
+
+@font-face {
+    font-family: 'Holen Vintage';
+    /* Nama font yang akan digunakan */
+    src: url('../font/Holen\ Vintage.otf') format('truetype');
+    /* Lokasi file font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SitkaVF';
+    /* Nama font yang akan digunakan */
+    src: url('../font/SitkaVF.ttf') format('truetype');
+    /* Lokasi file font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Authenticity';
+    /* Nama font yang akan digunakan */
+    src: url('../font/Authenticity.ttf') format('truetype');
+    /* Lokasi file font */
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --warna-kuning: rgba(239, 221, 136, 1);
+    --warna-hijau: rgba(6, 200, 199, 1);
+    --warna-pink: rgba(236, 124, 181, 1);
+
+}
+
+*{
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+body, html {
+    overflow-x: hidden;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-family: 'SitkaVF', 'Lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* navbar */
+.navbar {
+    color: aliceblue !important;
+    font-size: 20px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 20px;
+    /* font-weight: 600; */
+    /* Atur jarak antar item navbar */
+}
+
+.logo {
+    margin: auto;
+    fill: #fff;
+}
+
+.active {
+    color: var(--warna-hijau) !important;
+    /* text-shadow: 1px 1px 3px var(--warna-kuning) !important; */
+    /* -webkit-text-stroke: 1px var(--warna-kuning); */
+}
+
+.navbar-nav a:hover {
+    color: var(--warna-pink);
+    font-weight: 600;
+    /* transition: background-color 0.3s ease; */
+}
+
+.custom-navbar.scrolled {
+    transition: all 0.8s ease;
+    background-color: var(--warna-kuning);
+    /* Warna dengan transparansi saat di-scroll */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Opsional: bayangan untuk efek depth */
+}
+
+/* end Navbar */
+
+.jumbotron {
+    position: relative;
+    height: 120vh;
+    background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_pink.png');
+    background-color: var(--warna-hijau);
+    background-position: center -123%, 59% 21%;
+    background-size: 38%, 60%;
+    /* Atur ukuran gambar latar belakang pertama dan kedua */
+    background-repeat: no-repeat;
+    /* background-attachment: scroll; */
+    background-attachment: fixed;
+    /* Efek paralaks */
+    animation: bgChange 10s infinite;
+    /* Animasi untuk mengganti gambar latar belakang */
+    top: 0;
+    left: 0;
+}
+
+@keyframes bgChange {
+    0% {
+        background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_kuning.png');
+    }
+
+    25% {
+        background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_pink.png');
+    }
+
+    50% {
+        background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_putih.png');
+    }
+
+    75% {
+        background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_pink.png');
+    }
+
+    100% {
+        background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bundakasihsayang_kuning.png');
+    }
+}
+
+.jumbotron-caption {
+    position: absolute;
+    transform: rotate(-20deg);
+    bottom: 250px;
+    right: 100px;
+    /* left: 0; */
+}
+
+.jumbotron h2 {
+    font-family: 'Authenticity', sans-serif;
+    line-height: 45px;
+    color: #fff;
+}
+
+.logo-animasi .container {
+    position: relative;
+    /* max-width: 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    z-index: 1;
+}
+
+.logo-rotate {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 1;
+    animation: rotation 15s linear infinite;
+}
+
+.logo-tengah {
+    position: absolute;
+    width: 50px;
+    width: 50px;
+    z-index: 2;
+    /* border: 1px solid blueviolet; */
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* media Resposive */
+@media(max-width: 480px) {
+    .jumbotron {
+        position: relative;
+        max-width: 100%;
+        height: 800px;
+        background-image: url('../img/jumbotron/bg_hero.png'),url('../img/jumbotron/bks-responsive2.png') !important;
+        background-position: center 410%, center 20%;
+        background-size: 120%, 76%;
+        background-attachment: scroll;
+        display: flex;
+        justify-content: flex-end;
+        /* background-attachment: fixed, fixed; */
+        animation: bgChangesecondari 10s infinite !important;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    @keyframes bgChangesecondari {
+        0% {
+            background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bks-responsive2.png') !important;
+        }
+        
+        25% {
+            background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bks-responsive1.png') !important;
+        }
+        
+        50% {
+            background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bks-responsive3.png') !important;
+            
+        }
+        
+        75% {
+            background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bks-responsive4.png') !important;
+            
+        }
+        
+        100% {
+            background-image: url('../img/jumbotron/bg_hero.png'), url('../img/jumbotron/bks-responsive2.png') !important;
+            
+        }
+    }
+
+    .logo-animasi {
+        bottom: -645px;
+    }
+
+    .jumbotron-caption {
+        position: absolute;
+        transform: rotate(-20deg);
+        bottom: 15%;
+        right: 5%;
+        /* left: 0; */
+    }
+
+    .jumbotron-caption h2 {
+        font-size: 15px;
+        font-weight: 800;
+    }
+}
+
+
+.about {
+    border: 1px solid transparent;
+    background-color: var(--warna-pink);
+}
+
+.container-about {
+    background-color: var(--warna-pink);
+    /* border: 1px solid red; */
+    max-width: 100vh;
+    /* min-height: 100vh; */
+    text-align: center;
+    margin: auto;
+    /* color: #fff; */
+}
+
+.about h2 {
+    color: #fff;
+    font-size: 62px;
+    margin-top: 15%;
+}
+
+.about h3 {
+    color: #fff;
+    font-size: 24px;
+}
+
+.about a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+.about button {
+    /* color: #fff !important; */
+    background-color: var(--warna-kuning);
+    border-radius: 5px;
+    border: transparent;
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    
+}
+
+.about button:hover {
+    background-color: rgb(247, 248, 189);
+    transition: all 0.5s ease-in-out;
+}
+
+/* animation about */
+
+/* media responsive */
+@media(max-width:360px){
+    .jumbotron {
+        background-position: center 200%, center 20%;
+    }
+}
+@media(max-width:480px) {
+    /* .about * {
+        border: 1px solid red;
+        } */
+
+    .about {
+        display: flex;
+        background-color: var(--warna-pink);
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* endabout */
+
+.galeri {
+    /* position: relative; */
+    min-height: 100vh;
+    background-image: url('../img/asset/bareng-petani.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    /* margin: auto; */
+}
+
+/* media resposive */
+@media(max-width:480px) {
+    .galeri {
+        background-size: 350%;
+        /* aspect-ratio: 9/16; */
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+    }
+}
+
+.galeri h1 {
+    font-family: 'Holen Vintage', sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 3px black;
+    margin: auto;
+}
+
+.galeri p {
+    /* font-family: 'Holen Vintage', sans-serif; */
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+    margin: auto;
+}
+
+.galeri a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+.galeri button {
+    /* color: #fff !important; */
+    margin-top: 5px;
+    /* margin-left: 2px; */
+    background-color: var(--warna-kuning);
+    border-radius: 5px;
+    border: transparent;
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 50px;
+}
+
+/* endgaleri */
+
+/* article */
+.article {
+    border: 1px solid transparent;
+    background-color: var(--warna-kuning);
+    height: 130vh;
+}
+
+.container-title-article h2 {
+    font-family: 'Holen Vintage', sans-serif;
+    font-size: 60px;
+}
+
+.container-article{
+    /* transform: translate(0, 0px); */
+    transition: 1s;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 900px;
+    /* margin: 20px; */
+    background-color: var(--warna-kuning);
+    padding: 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+
+.main-article {
+    grid-column: 1;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border-radius: 8px;
+}
+
+.main-article img {
+    width: 65%;
+    border-radius: 8px;
+}
+
+.main-article-description {
+    margin-top: 10px;
+    font-size: 10px;
+    text-align: start;
+    color: #333;
+    margin-left: 17%;
+    margin-right: 17%;
+}
+.main-article-description h2 {
+    margin-top: -10px;
+    font-size: 20px;
+    text-align: start;
+    color: #333;
+}
+
+.small-articles {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.small-article {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: #e8eaf6;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.small-article img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.small-article-description {
+    font-size: 10px;
+    color: #555;
+}
+.small-article-description h2{
+    margin-top: -10px;
+    font-size: 20px;
+    color: #555;
+}
+
+@media screen and (max-width: 480px) {
+    .article {
+        min-height: 1450px;
+    }
+
+    .container-article {
+        grid-template-columns: 1fr;
+    }
+
+    .small-articles {
+        grid-template-rows: unset;
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.button-article {
+    width: 300px;
+    height: 40px;
+    background-color: var(--warna-kuning);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+.button-article a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
+
+.button-article button {
+    text-decoration: none;
+    background-color: var(--warna-pink);
+    border-radius: 5px;
+    border: 1px solid transparent;
+    font-size: 20px;
+    height: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.contact {
+    min-height: 100vh;
+    background-color: var(--warna-hijau);
+    background-image: url('../img/contact/foto\ kasih\ sayang\ bedua.png');
+    background-size: 50%;
+    background-position-x: right;
+    background-position-y: 6%;
+    background-repeat: no-repeat;
+    display: flex;
+}
+
+
+.container-contact {
+    width: 1000px;
+    /* height: 600px; */
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.contact-header {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-img {
+    display: none;
+}
+
+.container-contact h1 {
+    width: 100%;
+    font-family: 'Holen Vintage', sans-serif;
+    color: var(--warna-kuning);
+    font-size: 50px;
+}
+
+.container-contact h2 {
+    width: 100%;
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 20px;
+}
+
+.contact-form {
+    width: 40%;
+}
+
+/* media resposive */
+@media (max-width:480px) {
+    .contact {
+        background-size: 100%;
+        background-image: none;
+    }
+
+    .contact-header {
+        width: 100%;
+    }
+
+    .contact-img {
+        display: flex;
+        /* min-height: 120vh; */
+    }
+
+    .contact-img img {
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: auto;
+        margin-bottom: 15px;
+    }
+
+    .contact-form {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 0px;
+        margin-top: 60px;
+    
+    }
+
+    .contact-btn {
+        width: 90% !important;
+        margin: auto;
+        color: #fff;
+    }
+
+    .contact-header {
+        margin: auto;
+        margin-bottom: -50px;
+    }
+    .container-contact h1 {
+        text-align: center;
+        font-size: 40px;
+    }
+    .container-contact h2 {
+        text-align: center;
+        color: #ffff;
+    }
+}
+
+.contact-btn {
+    margin-top: 10px;
+    width: 40%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-btn span {
+    font-size: 20px;
+    margin: auto;
+}
+
+.contact-btn a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+
+}
+
+.contact-btn button {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: var(--warna-kuning);
+    border: transparent;
+
+}
+
+/* style Footer */
+.footer {
+    /* max-height: 25vh; */
+    background-color: #fff;
+    display: flex;
+    margin: 50px auto;
+}
+
+.container-footer {
+    width: 1200px;
+    margin: 20px auto;
+    display: flex;
+}
+
+.footer-logo {
+    margin-top: -35px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.footer-logo img {
+    margin-right: 10px;
+    width: 100%;
+}
+
+.footer-title {
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-title h2 {
+    font-family: 'Authenticity', sans-serif;
+    font-size: 17px;
+    color: var(--warna-pink);
+    line-height: 42px;
+}
+
+.footer-caption {
+    width: 800px;
+}
+
+.footer-sosmed {
+    width: 400px;
+}
+
+.footer-sosmed h2 {
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.footer-sosmed i {
+    font-size: 25px;
+    color: var(--warna-pink);
+    /* margin-right: 2px; */
+    margin: auto;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-wa {
+    width: 400px;
+}
+
+.footer-wa h2 {
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.footer-wa a {
+    margin-top: 5px;
+    text-decoration: none;
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+.footer-wa i {
+    margin: auto;
+    font-size: 25px;
+    color: var(--warna-pink);
+}
+
+.footer-other {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-other h2 {
+    font-family: 'Holen Vintage', sans-serif;
+    font-size: 20px;
+    color: var(--warna-pink);
+}
+
+.footer-other a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+@media(max-width: 480px) {
+    .footer {
+        width: 100%;
+    }
+
+    .container-footer {
+        width: 100%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-wa {
+        width: 450px;
+        text-align: center;
+    }
+
+    .footer-title {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-sosmed {
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-other {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .footer-caption {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.footer-bottom-text {
+    background-color: var(--warna-kuning);
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.footer-bottom-text h2 {
+    background-color: var(--warna-kuning);
+    color: black;
+    font-size: 15px;
+    /* height: 40px; */
+    margin: auto;
+    /* text-align: center; */
+}
+
+@media(max-width: 480px) {
+    .footer-bottom-text {
+        width: 100%;
+    }
+}
+
+/* style Halaman About */
+
+.isi-about {
+    /* border: 1px solid transparent; */
+    margin-top: -100px;
+    background-color: var(--warna-pink);
+    max-height: 850px;
+}
+
+.paragraf-satu-about {
+    margin-top: 100px;
+    margin-top: 100px;
+    display: flex;
+    place-items: center;
+    /* background-color: var(--warna-pink); */
+    /* justify-content: center; */
+}
+
+.paragraf-satu-about h2 {
+    margin-top: 150px;
+    width: 100%;
+    font-size: 180px;
+    color: #fff;
+    letter-spacing: 10px;
+    position: absolute;
+}
+.paragraf-satu-about p {
+    margin-top: 130px;
+    width: 100%;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+}
+
+@media (max-width:480px) {
+    .isi-about {
+        background-color: var(--warna-pink);
+        max-height: 470px;
+    }
+    .paragraf-satu-about h2 {
+        margin-top: 130px;
+        font-size:70px;
+    }
+    .paragraf-satu-about img {
+        width: 60% !important;
+        margin-top: 180px !important;
+    }
+    .paragraf-satu-about p {
+        margin-top: 80px;
+        width: 100%;
+        font-size: 20px;
+        color: #fff;
+        position: absolute;
+    }
+}
+
+.paragraf-satu-about img{
+    width: 37%;
+    margin-top: 260px;
+}
+
+.about-caption {
+    background-color: #fff;
+    width: 90%;
+    max-height: 100vh;
+    margin: auto;
+}
+.container-about-caption {
+    margin-top: 100px;
+    max-width: 100%;
+    background-color: #fff;
+    margin: 30px auto;
+    padding: 0;
+}
+
+.about-caption h1 {
+    margin-top: 200px;
+    font-size: 60px;
+}
+
+/* galeri abobut */
+.galeri-about {
+    /* position: relative; */
+    min-height: 100vh;
+    background-image: url('../img/about/about-galeri.jpg');
+    background-size: cover;
+    /* background-attachment: fixed; */
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    /* margin: auto; */
+}
+@media(max-width:480px) {
+    .galeri-about {
+        background-size: 200%;
+        /* aspect-ratio: 9/16; */
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: scroll;
+        min-height: 60vh;
+    }
+
+    .about-caption {
+        background-color: #fff;
+        width: 90%;
+        min-height: 60vh;
+        margin: auto;
+    }
+    .about-caption h1 {
+        margin-top: 140px;
+        font-size: 30px;
+    }
+}
+
+.galeri-about h1 {
+    font-family: 'Holen Vintage', sans-serif;
+    color: #fff;
+    text-shadow: 1px 1px 3px black;
+    margin: auto;
+}
+
+.galeri-about p {
+    /* font-family: 'Holen Vintage', sans-serif; */
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+    margin: auto;
+}
+
+.galeri-about a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+.galeri-about button {
+    /* color: #fff !important; */
+    margin-top: 5px;
+    /* margin-left: 2px; */
+    background-color: var(--warna-kuning);
+    border-radius: 5px;
+    border: transparent;
+    padding: 10px;
+    padding-left: 15px;
+    margin-bottom: 50px;
+}
+
+.container-biografi {
+    width: 80%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: 350px 250px 200px;
+}
+
+.item-biografi {
+    display: block;
+}
+.item-biografi img{
+    width: 80%;
+}
+.item-biografi p{
+    font-size: 15px;
+}
+.item-biografi h2{
+    font-size: 25px;
+}
+
+.item-biografi-blok {
+    display: grid;
+    place-content: flex-end;
+    place-items: flex-end;
+}
+.item-biografi-blok img{
+    width: 80%;
+}
+.item-biografi-blok-bottom {
+    display: grid;
+    place-content: flex-end;
+    place-items: flex-end;
+}
+.item-biografi-blok-bottom img{
+    width: 130%;
+}
+
+.mobile-view {
+    display: none;
+}
+
+/* media Responsive */
+@media (max-width: 480px) {
+    .container-biografi {
+        width: 90%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 18% 20%;
+        grid-gap: 10px;
+    }
+    .item-biografi img{
+        display: none;
+    }
+    .item-biografi-blok img{
+        display: none;
+    }
+    .item-biografi-blok-bottom img{
+        display: none;
+    }
+
+    .desktop-view {
+        display: none;
+    }
+
+    .mobile-view {
+        display: block;
+    }
+
+    .carousel-item img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media(max-width:360px){
+    .paragraf-satu-about h2 {
+        margin-top: 120px;
+        font-size:50px;
+    }
+    .paragraf-satu-about img{
+        width: 70% !important;
+        margin-top: 150px !important;
+    }
+    .container-biografi {
+        width: 90%;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: 90%;
+        grid-template-rows: 10% 20%;
+        grid-gap: 10px;
+    }
+}
+
+  .typing-char {
+    width: 22ch;
+    animation: typing 2s steps(22), blink 10s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    animation-fill-mode: forwards;
+    /* font-family: monospace; */
+    /* font-size: 2em; */
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+.featured-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+.single-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.card-height {
+    height: 300px;
+    position: relative;
+}
+
+.unstyle-category {
+    text-decoration: none;
+}
+
+.isi-article {
+    margin-left: -7%;
+    min-height: 110vh;
+    margin-top: -25px;
+    background-color: var(--warna-kuning);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sapa-article {
+    width: 1000px;
+}
+
+.sapa-article h2{
+    position: relative;
+    font-size: 90px;
+    font-family: 'SitkaVF', sans-serif;
+    margin: auto;
+    margin-bottom: -6%;
+    margin-right: -3%;
+}
+.sapa-article h1{
+    font-size: 150px;
+    font-family: 'Holen Vintage', sans-serif;
+}
+.sapa-article h3{
+    position: relative;
+    font-size: 400px;
+    font-family: 'SitkaVF', sans-serif;
+    width: 200px;
+    margin: auto;
+    margin-top: -23%;
+    margin-right: 5%;
+}
+.sapa-article p{
+    position: relative;
+    text-align: left;
+    font-size: 59px;
+    font-family: 'SitkaVF', sans-serif;
+    width: 500px;
+    line-height: 57px;
+    margin-top: -30%;
+    margin-left: 24%;
+    letter-spacing: 3px;
+}
+
+@media (max-width:480px) {
+
+    .isi-article {
+        min-height: 550px !important;
+    }
+
+    .sapa-article {
+        margin-top: 100px;
+    }
+    .sapa-article h2{
+        position: relative;
+        font-size: 45px;
+        font-family: 'SitkaVF', sans-serif;
+        margin: auto;
+        margin-bottom: -2%;
+        margin-right: -3%;
+    }
+    .sapa-article h1{
+        font-size: 75px;
+        font-family: 'Holen Vintage', sans-serif;
+    }
+    .sapa-article h3{
+        position: relative;
+        font-size: 200px;
+        font-family: 'SitkaVF', sans-serif;
+        width: 200px;
+        margin: auto;
+        margin-top: -11%;
+        margin-right: 23%;
+    }
+    .sapa-article p{
+        position: relative;
+        text-align: left;
+        font-size: 29px;
+        font-family: 'SitkaVF', sans-serif;
+        width: 250px;
+        line-height: 31px;
+        margin-top: -16%;
+        margin-left: 38%;
+        letter-spacing: 0px;
+    }
+
+    .button-isi-article {      
+        height: 50px !important;
+        width: 400px !important;
+    }
+
+    .button-isi-article a{
+        font-size: 15px !important;
+        margin-top: 15px !important;
+    }
+}
+
+.button-isi-article {
+    margin-left: 6%;
+    background-color: var(--warna-pink);
+    height: 50px;
+    width: 600px;
+    border-radius: 10px;
+    display: flex;
+}
+.button-isi-article:hover {
+    background-color: rgb(243, 128, 147);
+    transition: all 0.5 ease;
+}
+
+.button-isi-article a{
+    height: 50px;
+    width: 600px;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.carousel-galeri{
+    width: 100%;
+    height: 600px;
+    /* height: 200px; */
+}
+.carousel-galeri img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    /* height: 200px; */
+}
+/* .isi-contact *{
+    border: 1px solid black;
+} */
+.isi-contact button{
+    background-color: var(--warna-pink);
+    border-radius: 10px;
+    border: 1px solid transparent;
+    width: 150px;
+    height: 50px;
+}
+.container-isi-contact a{
+    text-decoration: none;
+    color: white;
+}
+
+.isi-contact h1{
+    font-family: 'Holen Vintage', sans-serif;
+    font-size: 150px;
+}
+.isi-contact h2{
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 40px;
+}
+
+.isi-contact h3{
+    margin-top: 10px;
+    font-family: 'Holen Vintage', sans-serif;
+    font-size: 25px;
+}
+.download a{
+    color: black;
+    font-size: 60px;
+    text-align: center;
+    margin: auto;
+}
+.download h2{
+    margin-top: -10px;
+    font-family: 'SitkaVF', sans-serif;
+    font-size: 20px;
+}
+
+.container-isi-contact {
+    /* border: 1px solid red; */
+    width: 700px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px dotted rgb(82, 80, 80);
+}
+
+@media (max-width:480px) {
+    .isi-article {
+        margin-left: -15%;
+    }
+
+    .button-isi-article {
+        height: 74px !important;
+        width: 311px !important;
+    }
+    .container-isi-contact img{
+        width: 100%;
+    }
+
+    .text-center {
+        text-align: center !important;
+    }
+
+    .container-isi-contact {
+                display: flex;
+                align-items: center;
+                border-bottom: 2px dotted rgb(82, 80, 80);
+                width: 100%;
+                min-height: 100vh;
+    }
+
+    .isi-contact button{
+        margin-top: 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        width: 150px;
+        height: 50px;
+    }
+
+    .isi-contact h1{
+        font-family: 'Holen Vintage', sans-serif;
+        font-size: 100px;
+    }
+    .isi-contact h3{
+        margin-top: 10px;
+        font-family: 'Holen Vintage', sans-serif;
+        font-size: 10px;
+    }
+    .download a{
+        font-size: 40px;
+        text-align: center;
+        margin: auto;
+    }
+    .download h2{
+        font-family: 'SitkaVF', sans-serif;
+        font-size: 10px;
+    }
+}

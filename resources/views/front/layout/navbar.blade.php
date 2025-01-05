@@ -177,7 +177,7 @@
                     <a class="nav-link {{ Request::is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}"><span>Article</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link {{ Request::is('category') ? 'active' : '' }} dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{-- <a class="nav-link {{ Request::is('category') ? 'active' : '' }} dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Categories</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories_navbar as $item)
@@ -186,7 +186,7 @@
                         @endforeach
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="{{ url('all-category') }}">All Categories</a></li>
-                    </ul>
+                    </ul> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ url('/contact') }}"><span>Contact</span></a>

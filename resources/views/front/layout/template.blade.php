@@ -90,7 +90,7 @@
                 <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
                 <a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}">Profile</a>
                 <a href="{{ url('/articles') }}" class="{{ Request::is('articles') ? 'active' : '' }}">Article</a>
-                <a href="{{ url('/all-category') }}" class="{{ Request::is('all-category') ? 'active' : '' }}">Categories</a>
+                {{-- <a href="{{ url('/all-category') }}" class="{{ Request::is('all-category') ? 'active' : '' }}">Categories</a> --}}
                 <a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">Contact</a>
             </div>
         </div>

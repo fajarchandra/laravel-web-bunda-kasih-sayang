@@ -45,7 +45,7 @@ Route::get('/galeri', [frontGaleriController::class, 'index'])->name('galeri.ind
 
 Route::get('/contact', [ContactController::class, 'index']);
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth','verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index']);
     Route::resource('article', ArticleController::class);
     Route::resource('/category', CategoryController::class)->only([
@@ -69,6 +69,6 @@ Route::middleware('auth')->group(function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
 });
-Auth::routes();
+Auth::routes(['verify'=>true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -73,9 +73,8 @@ a {
 }
 
 .active {
-    color: var(--warna-hijau) !important;
-    /* text-shadow: 1px 1px 3px var(--warna-kuning) !important; */
-    /* -webkit-text-stroke: 1px var(--warna-kuning); */
+    color: rgb(29, 151, 151) !important;
+    font-weight: 600;
 }
 
 .navbar-nav a:hover {
@@ -305,6 +304,11 @@ a {
         background-position: center 200%, center 20%;
     }
 }
+@media(max-width:390px){
+    .jumbotron {
+        background-position: center 295%, center 20%;
+    }
+}
 @media(max-width:480px) {
     /* .about * {
         border: 1px solid red;
@@ -458,6 +462,12 @@ a {
     font-size: 10px;
     color: #555;
 }
+
+.small-article-description a{
+    /* font-size: 10px; */
+    color: #555;
+}
+
 .small-article-description h2{
     margin-top: -10px;
     font-size: 20px;

@@ -22,7 +22,7 @@
                         @foreach ($articles as $item)
                             <div class="container-isi-contact text-center">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12" data-aos="fade-down">
                                         <div class="row">
                                             <div class="col-lg-3 text-center">
                                                 <img src="{{ asset('storage/back/' . $item->img) }}"

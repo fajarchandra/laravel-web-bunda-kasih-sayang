@@ -50,7 +50,7 @@
             </div>
         </div>
         <div class="container-article">
-            <div class="main-article text-center">
+            <div class="main-article text-center" data-aos="fade-up">
                 <a href="{{ url('p/' . $latest_post->slug) }}">
                     <img class="card-img-top featured-img" src="{{ asset('storage/back/' . $latest_post->img) }}"
                         alt="..." /></a>
@@ -62,13 +62,13 @@
                             href="{{ url('category/' . $latest_post->Category->slug) }}">{{ $latest_post->Category->name }}</a>
                     </div>
                     </p>
-                    <h2>{{ $latest_post->title }}</h2>
-                    <p class="card-text">{{ Str::limit(strip_tags($latest_post->desc), 150, '...') }}</p>
+                    <h2><a href="{{ url('p/' . $latest_post->slug) }}">{{ Str::limit(strip_tags($latest_post->title), 50, '...') }}</a></h2>
+                    <p class="card-text"><a href="{{ url('p/' . $latest_post->slug) }}">{{ Str::limit(strip_tags($latest_post->desc), 150, '...') }}</a></p>
                 </div>
             </div>
             <div class="small-articles">
                 @foreach ($articles as $item)
-                    <div class="small-article">
+                    <div class="small-article" data-aos="fade-down">
                         <a href="{{ url('p/' . $item->slug) }}"><img class="card-img-top post-img"
                                 src="{{ asset('storage/back/' . $item->img) }}" alt="..." /></a>
                         <div class="small-article-description">
@@ -78,7 +78,7 @@
                                 | <a href="{{ url('category/' . $item->Category->slug) }}">{{ $item->Category->name }}</a>
                             </div>
                             </p>
-                            <h2>{{ $item->title }}</h2>
+                            <h2><a href="{{ url('p/' . $item->slug) }}">{{ $item->title }}</a></h2>
                         </div>
                     </div>
                 @endforeach

@@ -52,12 +52,12 @@
 <section class="galeri-about" id="galeri-about">
     <div class="container">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6" data-aos="fade-right">
                 <h1>Kepo Dengan Kegiatan dan Programnya ?</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-6" data-aos="fade-right">
                 <p>Banyak Kegiatan dan Program perkembangan lainnya. Yuk bahas idenya </p>
             </div>
         </div>

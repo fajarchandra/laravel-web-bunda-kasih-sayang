@@ -26,10 +26,10 @@
     <section class="about" id="about">
         <div class="container-about">
             <div class="col text-center mt-3">
-                <h2 class="ptitle">Saya,adalah seorang pembisnis,
+                <h2 data-aos="fade-right">Saya,adalah seorang pembisnis,
                     Pembicara, Pendidik, Pemimpi, Istri dan Ibu.
                 </h2>
-                <h3 class="pdesk">Eits, Sebentar masih ada nih penjelasan tentang saya. Seorang dalang
+                <h3 data-aos="fade-left">Eits, Sebentar masih ada nih penjelasan tentang saya. Seorang dalang
                     pendidikan mandiri, aktivis kesehatan, penyemangat anak muda, terobsesi dengan ketahanan pangan
                     orang yang
                     keras kepala, berprestasi dan individualis, seorang koki di kota kecil untuk keluara kecil saya.
@@ -41,7 +41,7 @@
                 </h3>
             </div>
             <!-- <div class="col-sm-8 offset-2 mb-2 text-center"> -->
-            <button><a href="about.html" target="_blank">Suka dengan kisahnya? Lihat yang lebih menarik lagi</a>
+            <button><a href="{{ url('/about') }}">Suka dengan kisahnya? Lihat yang lebih menarik lagi</a>
             </button>
         </div>
     </section>
@@ -50,16 +50,16 @@
     <section class="galeri" id="galeri">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" data-aos="fade-right">
                     <h1>Kepo Dengan Kegiatan dan Programnya ?</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" data-aos="fade-right">
                     <p>Banyak Kegiatan dan Program perkembangan lainnya. Yuk bahas idenya </p>
                 </div>
             </div>
-            <button><a href="#">Pengen E-Book gratis?Klik disini</a></button>
+            <button><a href="{{ url('/contact') }}">Pengen E-Book gratis?Klik disini</a></button>
         </div>
     </section>
 
@@ -71,7 +71,7 @@
             </div>
         </div>
         <div class="container-article">
-            <div class="main-article text-center">
+            <div class="main-article text-center" data-aos="fade-up">
                 <a href="{{ url('p/' . $latest_post->slug) }}">
                     <img class="card-img-top featured-img" src="{{ asset('storage/back/' . $latest_post->img) }}"
                         alt="..." /></a>
@@ -89,7 +89,7 @@
             </div>
             <div class="small-articles">
                 @foreach ($articles as $item)
-                    <div class="small-article">
+                    <div class="small-article" data-aos="fade-down">
                         <a href="{{ url('p/' . $item->slug) }}"><img class="card-img-top post-img"
                                 src="{{ asset('storage/back/' . $item->img) }}" alt="..." /></a>
                         <div class="small-article-description">
@@ -108,7 +108,7 @@
                     {{ $articles->links() }}
                 </div> --}}
                 <div class="button-article">
-                    <button><a href="#article">Explore Post Lainnya</a></button>
+                    <button><a href="{{ url('/articles') }}">Explore Post Lainnya</a></button>
                 </div>
         </div>
     </section>

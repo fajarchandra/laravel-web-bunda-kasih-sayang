@@ -10,7 +10,7 @@
     @stack('meta-seo')
     <title>@yield('title')</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{asset('front/img/logo/Logo-Love-putih.png')}}" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet" />
@@ -45,16 +45,16 @@
                     lainnya.</h2>
             </div>
             <div class="contact-form">
-                <form action="#">
+                {{-- <form action="#">
                     <!-- <label for="exampleFormControlInput1" class="form-label"></label> -->
                     <input type="text" class="form-control mb-2" id="exampleFormControlInput1" placeholder="Name">
                     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email">
-                </form>
+                </form> --}}
             </div>
             <div class="contact-btn">
-                <button><a href="#">Join</a></button>
+                <button><a href="{{ url('/register') }}">Join</a></button>
                 <span>Atau via</span>
-                <button><a href="#">WA Group</a></button>
+                <button><a href="https://wa.me/{{ $config['phone'] }}" target="_blank">WA Group</a></button>
             </div>
         </div>
     </section>
@@ -82,16 +82,16 @@
                 </div>
                 <div class="footer-wa">
                     <h2>Yuk Bahas Ide dan Gagasan</h2>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i>+628516878744</a>
+                    <a href="https://wa.me/{{ $config['phone'] }}" target="_blank"><i class="fa-brands fa-whatsapp"></i>+628516878744</a>
                 </div>
             </div>
             <div class="footer-other">
                 <h2>Kunjungi Lainnya</h2>
-                <a href="{{ url('/') }}">Home</a>
-                <a href="{{ url('/about') }}">Profile</a>
-                <a href="{{ url('/articles') }}">Article</a>
-                <a href="{{ url('/all-category') }}">Categories</a>
-                <a href="{{ url('/contact') }}">Contact</a>
+                <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
+                <a href="{{ url('/about') }}" class="{{ Request::is('about') ? 'active' : '' }}">Profile</a>
+                <a href="{{ url('/articles') }}" class="{{ Request::is('articles') ? 'active' : '' }}">Article</a>
+                <a href="{{ url('/all-category') }}" class="{{ Request::is('all-category') ? 'active' : '' }}">Categories</a>
+                <a href="{{ url('/contact') }}" class="{{ Request::is('contact') ? 'active' : '' }}">Contact</a>
             </div>
         </div>
     </section>

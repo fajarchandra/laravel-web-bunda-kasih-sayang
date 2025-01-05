@@ -167,17 +167,17 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav text-light mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scrol" aria-current="page" href="{{ url('/') }}">
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">
                         <span>Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scrol" href="{{ url('/about') }}"><span>Profile</span></a>
+                    <a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="{{ url('/about') }}"><span>Profile</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scrol" href="{{ url('/articles') }}"><span>Article</span></a>
+                    <a class="nav-link {{ Request::is('articles') ? 'active' : '' }}" href="{{ url('/articles') }}"><span>Article</span></a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link {{ Request::is('category') ? 'active' : '' }} dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Categories</a>
                     <ul class="dropdown-menu">
                         @foreach ($categories_navbar as $item)
@@ -189,7 +189,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scrol" href="{{ url('/contact') }}"><span>Contact</span></a>
+                    <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ url('/contact') }}"><span>Contact</span></a>
                 </li>
             </ul>
         </div>
